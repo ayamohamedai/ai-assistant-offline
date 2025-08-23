@@ -1,6 +1,6 @@
 <div align="center">
 
-# الذكي - مساعدك الشخصي المجاني
+# - مساعدك الذكي الشخصي المجاني
 ## Free Offline AI Assistant - Your Personal ChatGPT
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-app-link.streamlit.app)
