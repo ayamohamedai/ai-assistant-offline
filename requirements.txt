@@ -1,37 +1,129 @@
-# Core dependencies
-streamlit>=1.28.0
-torch>=2.0.0
-transformers>=4.30.0
-sentence-transformers>=2.2.2
+# ============================================
+# متطلبات الإنتاج - المساعد الذكي المجاني
+# Production Requirements - Al-Thaki AI Assistant
+# ============================================
+# Version: 1.0.0
+# Compatible with: Streamlit Cloud, Heroku, Railway, Local
 
-# Database and storage
-sqlite3
-pandas>=1.5.0
-numpy>=1.21.0
+# --- Core AI & ML Libraries ---
+torch>=2.0.0,<2.3.0                    # PyTorch - Deep Learning Framework
+transformers>=4.30.0,<4.40.0           # Hugging Face Transformers - AI Models
+sentence-transformers>=2.2.0,<2.4.0    # Sentence Embeddings for Search
+tokenizers>=0.13.0,<0.16.0             # Fast tokenization
 
-# UI and visualization
-plotly>=5.10.0
-altair>=4.2.0
+# --- Web Framework ---
+streamlit>=1.28.0,<1.35.0              # Web UI Framework
+streamlit-chat>=0.1.0                  # Enhanced chat components (optional)
 
-# NLP and Arabic support
-nltk>=3.8
-arabert>=1.0.0
-pyarabic>=0.6.0
+# --- Data Processing ---
+pandas>=2.0.0,<2.2.0                   # Data manipulation and analysis
+numpy>=1.24.0,<1.27.0                  # Numerical computing
+scipy>=1.10.0,<1.12.0                  # Scientific computing (optional)
 
-# Utilities
-requests>=2.28.0
-python-dotenv>=1.0.0
-pyyaml>=6.0
-tqdm>=4.64.0
+# --- Visualization ---
+plotly>=5.15.0,<5.20.0                 # Interactive charts
+matplotlib>=3.6.0,<3.8.0               # Basic plotting (fallback)
 
-# Optional: For better performance
-accelerate>=0.20.0
-optimum>=1.8.0
+# --- Database & Storage ---
+# sqlite3 is built into Python, no need to install
+sqlalchemy>=2.0.0,<2.1.0               # Advanced database operations (optional)
 
-# Development tools (optional)
-black>=22.0.0
-flake8>=5.0.0
-pytest>=7.0.0
+# --- NLP & Text Processing ---
+nltk>=3.8,<3.9                         # Natural Language Processing
+regex>=2023.0.0                        # Enhanced regex support
+ftfy>=6.1.0                            # Text cleaning and normalization
 
-# Security
-cryptography>=3.4.8
+# --- Arabic Language Support ---
+pyarabic>=0.6.0                        # Arabic text processing
+arabic-reshaper>=3.0.0                 # Arabic text reshaping
+python-bidi>=0.4.0                     # Bidirectional text support
+
+# --- System & Performance ---
+psutil>=5.9.0,<6.0.0                   # System and process monitoring
+threading-timer>=1.0.0                 # Advanced threading
+memory-profiler>=0.60.0                # Memory usage monitoring
+
+# --- File Processing ---
+python-docx>=0.8.11                    # Word document processing
+PyPDF2>=3.0.0                          # PDF processing
+openpyxl>=3.1.0                        # Excel file processing
+
+# --- Date & Time ---
+python-dateutil>=2.8.2,<2.9.0          # Date utilities
+pytz>=2023.0                           # Timezone handling
+
+# --- Utilities ---
+requests>=2.28.0,<2.32.0               # HTTP requests
+urllib3>=1.26.0,<2.1.0                 # URL handling
+tqdm>=4.64.0,<4.67.0                   # Progress bars
+colorama>=0.4.6                        # Colored terminal output
+python-dotenv>=1.0.0                   # Environment variables
+
+# --- Security & Encryption ---
+cryptography>=3.4.8,<42.0.0            # Encryption and security
+hashlib                                # Built-in hashing (no install needed)
+secrets                                # Built-in secure random (no install needed)
+
+# --- Configuration ---
+pyyaml>=6.0,<6.1                       # YAML configuration files
+toml>=0.10.2                           # TOML configuration support
+configparser                           # Built-in config parser (no install needed)
+
+# --- Development & Debugging (Optional) ---
+# Uncomment for development
+# pytest>=7.0.0,<8.0.0                 # Testing framework
+# black>=22.0.0,<24.0.0                # Code formatting
+# flake8>=5.0.0,<7.0.0                 # Code linting
+# mypy>=1.0.0,<1.6.0                   # Type checking
+
+# --- Performance Optimization (Optional for powerful machines) ---
+# accelerate>=0.20.0,<0.25.0           # Hugging Face acceleration
+# optimum>=1.8.0,<1.15.0               # Model optimization
+# onnx>=1.14.0                         # ONNX model format
+# onnxruntime>=1.15.0                  # ONNX runtime
+
+# --- Cloud Deployment Specific ---
+gunicorn>=20.1.0,<21.0.0               # WSGI server (for some cloud providers)
+uvicorn>=0.20.0,<0.25.0                # ASGI server (alternative)
+
+# ============================================
+# Installation Notes:
+# ============================================
+
+# For Local Development:
+# pip install -r requirements.txt
+
+# For Production (Cloud):
+# pip install -r requirements.txt --no-cache-dir
+
+# For Streamlit Cloud:
+# This file is automatically detected and installed
+
+# For Memory-Constrained Environments:
+# Comment out heavy dependencies like torch, transformers
+# The app will run in fallback mode with basic functionality
+
+# Troubleshooting:
+# If installation fails, try:
+# pip install --upgrade pip
+# pip install -r requirements.txt --force-reinstall
+
+# ============================================
+# Platform-Specific Notes:
+# ============================================
+
+# Streamlit Cloud: All dependencies work out of the box
+# Heroku: May need buildpack for some ML libraries
+# Railway: Works with all dependencies
+# Local: Recommended for best performance
+
+# For ARM-based Macs (M1/M2):
+# Some packages might need different versions
+# Use: pip install --platform macosx_11_0_arm64 --only-binary=:all:
+
+# ============================================
+# Security Notice:
+# ============================================
+# All data processing happens locally/on your server
+# No external API calls for AI processing
+# Complete privacy and security guaranteed
